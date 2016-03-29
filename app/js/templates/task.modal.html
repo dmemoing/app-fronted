@@ -1,0 +1,128 @@
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal"><span class="si-close modal-close" ng-click="cancel()"></span><span class="sr-only">Close</span></button>
+                    <h4 class="modal-title">Create task</h4>
+                </div>
+                <div class="modal-body">
+                    <h4>Basic</h4>
+                    <div class="form-group">
+                        <label for="name-field" class="control-label">Task Name</label>
+                        <div><input type="text" id="name-field" ng-model="task.name" class="form-control"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="cpus-field" class="control-label">Cpus</label>
+                                <div><input type="text" id="cpus-field" ng-model="task.cpus" class="form-control" ></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="mem-field" class="control-label">Memory(MB)</label>
+                                <div><input type="text" id="mem-field" ng-model="task.mem" class="form-control" ></div>
+                            </div>
+                        </div>
+                        <div class="col-sm-4">
+                            <div class="form-group">
+                                <label for="disk-field" class="control-label">Disk Space(MB)</label>
+                                <div><input type="text" id="disk-field" ng-model="task.disk" class="form-control" ></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="cmd-field" class="control-label">Command</label>
+                        <div><textarea type="text" id="cmd-field" ng-model="task.cmd" class="form-control"></textarea></div>
+                    </div>
+                    <div class="row full-bleed">
+                        <div class="panel panel-default">
+                            <div class="panel-heading clickable">
+                                <div class="panel-title">
+                                    <a data-toggle="collapse" href=".DockerSetting" aria-expanded="true"><span class="si-angle-right"></span>Docker settings</a>
+
+                                </div>
+                            </div>
+                            <div id="DockerSetting" class="DockerSetting panel-collapse collapse" aria-expanded="true">
+                                <div class="panel-body">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="image-field" class="control-label">Image</label>
+                                                <div><input type="text" id="image-field" ng-model="task.docker_image" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <div class="form-group">
+                                                <label for="network-field" class="control-label">Network</label>
+                                                <div>
+                                                    <select type="text" id="network-field" ng-model="task.docker_network" class="form-control">
+                                                        <option value="HOST">HOST</option>
+                                                        <option value="BRIDGE">BRIDGE</option>
+                                                    </select></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Port Mappings</h4>
+                                    <div class="row duplicable-row" ng-repeat="port_mapping in task.port_mappings">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Container Port</label>
+                                                <div><input type="text" ng-model="port_mapping.container_port" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Host Port</label>
+                                                <div><input type="text" ng-model="port_mapping.host_port" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Host Port</label>
+                                                <div><select type="text" ng-model="port_mapping.protocol" class="form-control">
+                                                    <option value="TCP">TCP</option>
+                                                    <option value="UDP">UDP</option>
+                                                </select></div>
+                                            </div>
+                                            <div class="controls">
+                                                <a ng-click="addPortMapping()"><span class="si-plus"></span></a>
+                                                <a ng-show="$index!=0" ng-click="deletePortMapping($index)"><span class="si-less"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <h4>Volumes</h4>
+                                    <div class="row duplicable-row" ng-repeat="volume in task.volumes">
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Container Path</label>
+                                                <div><input volumes="text" ng-model="volume.container_path" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Host Path</label>
+                                                <div><input type="text" ng-model="volume.host_path" class="form-control"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label class="control-label">Mode</label>
+                                                <div><select type="text" ng-model="volume.mode" class="form-control">
+                                                    <option value="RO">Read Only</option>
+                                                    <option value="RW">Read and Write</option>
+                                                </select></div>
+                                            </div>
+                                            <div class="controls">
+                                                <a ng-click="addVolume()"><span class="si-plus"></span></a>
+                                                <a ng-show="$index!=0" ng-click="deleteVolume($index)"><span class="si-less"></span></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-white" ng-click="cancel()">Cancel</button>
+                    <button type="button" class="btn btn-primary" ng-click="submit()">Create</button>
+                </div>

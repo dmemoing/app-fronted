@@ -1,0 +1,62 @@
+.mail-tools {
+	button {
+		span {
+			font-size: 20px;
+		}
+	}
+}
+
+.mail-box {
+	min-height: 400px;
+}
+
+.file-manager {
+	h5 {
+		margin-bottom: 5px;
+	}
+}
+
+.category-list {
+	li {
+		a {
+			font-weight: 200;
+		}
+	}
+}
+
+.mail-box-header {
+	h2 {
+		font-weight: 200;
+	}
+}
+.compose-mail {
+	font-weight: 200;
+    background-color: #0e9aef;
+    border-color: #0e9aef;
+    color: #FFF;
+    &:active, &:hover, &:focus {
+    	background-color: darken(#0e9aef, 5%);
+    	border-color: darken(#0e9aef, 5%);
+    }
+}
+
+.table-tools {
+	margin: 10px;
+}
+table.tasks tr td {
+	font-weight: 200;
+}
+
+.mail-options {
+	a {
+		font-size: 20px;
+		color: #337ab7 !important;
+		&:hover {
+			color: darken(#337ab7, 10%) !important;
+		}
+	}
+}
+
+.mailbox-main {
+	min-height: 400px;
+}

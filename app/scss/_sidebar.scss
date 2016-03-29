@@ -1,0 +1,113 @@
+.sidebar {
+	position: fixed;
+	width: 200px;
+	height: 100%;
+	background-color: #2f323a;
+    -webkit-transition: all .5s;
+    transition: all .5s;
+	.sidebar-inner {
+		height: 100%;
+		position: relative;
+	}
+	.brand-top {
+		height: 50px;
+		background-color: darken(#5394dd, 20%);
+		background: url(../images/brand-bg.png);
+		overflow: hidden;
+		text-align: center;
+		img {
+			width: 50px;
+			padding: 5px;
+			display: inline-block;
+		}
+		h3 {
+			display: inline-block;
+			height: 50px;
+			line-height: 50px;
+			vertical-align: middle;
+			color: #fff;
+		}
+	}	
+	
+	.navbar {
+		position: relative;
+		&.navbar-bottom {
+			position: absolute;
+			bottom: 20px;
+		}
+	}
+
+	.nav {
+		li {
+			a {
+				padding: 8px 12px;
+				font-size: 25px;
+				display: block;
+				padding-left: 30px;
+				color: #fff;
+				span {
+					vertical-align: middle;
+				}
+				&:hover {
+					background-color: rgb(55, 66, 79);
+				}
+			}
+			&.active {
+				border-left: none;
+				a {
+					background-color: darken(#2f323a, 10%)
+				}
+			}
+		}
+	}
+	.nav-label {
+		font-size: 14px;
+		font-weight: 100;
+		margin-left: 10px;
+	}
+}
+
+.mini-navbar {
+	.sidebar {
+		width: 50px;
+	}
+	.main-wrapper {
+		margin-left: 50px;
+	}
+	.nav {
+		li {
+			a {
+				padding: 8px 12px;
+			}
+		}
+	}
+}
+
+
+.main-wrapper {
+	margin-left: 200px;
+    -webkit-transition: all .5s;
+    transition: all .5s;	
+}
+
+.navbar-minimalize {
+	display: block;
+	border: none;
+	background-color: #2f323a;
+	width: 100%;
+	color: #fff;
+	font-size: 20px;
+	text-align: center;
+	padding: 5px 0 2px 0;
+	&:hover {
+		color: #fff;
+	}
+}
+
+.rotate {
+	transform:rotate(90deg);
+	-ms-transform:rotate(90deg); 
+	-moz-transform:rotate(90deg); 
+	-webkit-transform:rotate(90deg); 
+	-o-transform:rotate(90deg); 
+}

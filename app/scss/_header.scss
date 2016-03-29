@@ -1,0 +1,24 @@
+.header {
+	height: 50px;
+	background-color: #39aef5;
+	padding: 10px;
+	position: relative;
+
+	.brand {
+		font-weight: normal;
+		font-size: 20px;
+		line-height: 30px;
+		color: rgb(82, 153, 217);
+	}
+
+	.tab-title {  
+		padding: 5px 10px;
+		color: #999;
+		font-size: 20px;
+		color: #5394dd;
+		font-weight: 200;
+		h3 {
+			font-weight: normal;
+		}
+	}
+}

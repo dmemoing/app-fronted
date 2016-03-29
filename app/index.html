@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="sher" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="sher" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="sher" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="sher" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Sher - Frontend</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- bower:css -->
+  <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="lib/angular-material/angular-material.css">
+  <link rel="stylesheet" href="lib/angular-chart.js/dist/angular-chart.css">
+  <!-- endbower -->
+  <link rel="stylesheet" href="css/style.min.css">
+  <link rel="stylesheet" href="css/animate.min.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <script src="lib/html5-boilerplate/dist/js/vendor/modernizr-2.8.3.min.js"></script>
+</head>
+<body class="fixed-sidebar mini-navbar">
+<div class="sidebar">
+  <div class="sidebar-inner" id="side-menu">
+    <div class="brand-top">
+      <div class="brand">
+        <a href="">
+          <img src="images/logo.png" alt="">
+          <h3>APT-MESOS</h3></a>
+      </div>
+    </div>
+    <div class="navbar">
+      <a class="navbar-minimalize"><span class="navbar-minimalize-inner"><span class="si-menu"></span></span></a>
+      <ul class="nav">
+        <li ui-sref-active="active"><a ui-sref="overview"><span class="si-cloud"></span><span class="nav-label">Dashboard</span></a></li>
+        <li ui-sref-active="active"><a ui-sref="task"><span class="si-browser"></span><span class="nav-label">Tasks</span></a></li>
+        <li ui-sref-active="active"><a href="#/view2"><span class="si-server"></span><span class="nav-label">Cluster</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+  <!--[if lt IE 7]>
+      <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+  <![endif]-->
+
+  <div class="main-wrapper" id="main-wrapper">
+    <div class="header">
+      <!-- <h3 class="tab-title">Task Manager | </h3> -->
+    </div>
+    <div ui-view></div>
+  </div>
+
+  <!-- bower:js -->
+  <script src="lib/angular/angular.js"></script>
+  <script src="lib/angular-route/angular-route.js"></script>
+  <script src="lib/angular-loader/angular-loader.js"></script>
+  <script src="lib/angular-mocks/angular-mocks.js"></script>
+  <script src="lib/angular-resource/angular-resource.js"></script>
+  <script src="lib/jquery/dist/jquery.js"></script>
+  <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="lib/angular-ui-router/release/angular-ui-router.js"></script>
+  <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="lib/angular-messages/angular-messages.js"></script>
+  <script src="lib/angular-animate/angular-animate.js"></script>
+  <script src="lib/angular-aria/angular-aria.js"></script>
+  <script src="http://ngmaterial.assets.s3.amazonaws.com/svg-assets-cache.js"></script>
+  <script src="lib/angular-material/angular-material.js"></script>
+  <script src="lib/Chart.js/Chart.js"></script>
+  <script src="lib/angular-chart.js/dist/angular-chart.js"></script>
+  <!-- endbower -->
+  <script src="scripts/sher.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/task.controller.js"></script>
+  <script src="js/controllers/task.detail.controller.js"></script>
+  <script src="js/controllers/overview.controller.js"></script>
+  <script src="js/services/task.service.js"></script>
+  <script src="js/filters/relative-time.filter.js"></script>
+  <script src="js/modules/view2/view2.js"></script>
+  <script src="js/components/relative-time/relative-time.js"></script>
+</body>
+</html>

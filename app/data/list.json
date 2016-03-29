@@ -1,0 +1,21 @@
+{
+	"result":[{
+		"id": 1,
+		"name": "task1",
+		"docker_image": "1",
+		"slave_hostname": "1",
+		"cpus": 1,
+		"mem": 1,
+		"state": 1,
+		"create_time": 1
+	},{
+		"id": 2,
+		"name": "task2",
+		"docker_image": "2",
+		"slave_hostname": "2",
+		"cpus": 2,
+		"mem": 2,
+		"state": 2,
+		"create_time": 2
+	}]
+}
