@@ -14,7 +14,7 @@ function SmoothlyMenu() {
 $(document).ready(function() {
     // 边栏缩小
     $(".navbar-minimalize").click(function() {
-        $("body").toggleClass("mini-navbar"),
+        $("body").toggleClass("sher-navbar"),
             SmoothlyMenu()
     })
 
