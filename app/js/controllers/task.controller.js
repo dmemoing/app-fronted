@@ -44,7 +44,7 @@ function($scope, $http, $timeout, $state, $stateParams, $uibModal, Tasks) {
 
     // 搜索任务
     $scope.search = function () {
-        $state.go('task', {query: $scope.search_key})
+        $state.go('navbar.task', {query: $scope.search_key})
     }
 
     // 打开提交任务的模态框
