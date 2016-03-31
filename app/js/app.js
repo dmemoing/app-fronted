@@ -9,10 +9,9 @@ angular.module('sher', [
   'sher.auth',
   'ngRoute',
   'ngCookies'
-]).
-config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise('/login');
+])
 
+.config(['$stateProvider', '$urlRouterProvider', '$locationProvider', function($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
 	  .state("login", {
         url: "/login",
@@ -34,21 +33,24 @@ config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRou
         templateUrl: "/app/js/templates/overview.html",
         controller: ''
       });
+  //$locationProvider.html5Mode({enabled:true, requireBase:false});
+  $locationProvider.html5Mode({enabled:true});
+  $urlRouterProvider.otherwise('/login');
 }])
 
 .run(['$rootScope', '$state', '$cookieStore', '$http',
-    function ($rootScope, $state, $cookieStore, $http) {
-        // keep user logged in after page refresh
-        $rootScope.globals = $cookieStore.get('globals') || {};
-        if ($rootScope.globals.currentUser) {
-        //    $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; 
-        }
+		function ($rootScope, $state, $cookieStore, $http) {
+			// keep user logged in after page refresh
+			$rootScope.globals = $cookieStore.get('globals') || {};
+			if ($rootScope.globals.currentUser) {
+				//    $http.defaults.headers.common['Authorization'] = 'Basic ' + $rootScope.globals.currentUser.authdata; 
+			}
 
-        $rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
-            // redirect to login page if not logged in
-            if (toState.name !== 'login' && !$rootScope.globals.currentUser) {
-				event.preventDefault(); 
-                $state.go('login');
-            }
-        });
-    }]);
+			$rootScope.$on('$stateChangeStart', function(event, toState, toParams, fromState, fromParams, options) {
+				// redirect to login page if not logged in
+				if (toState.name !== 'login' && !$rootScope.globals.currentUser) {
+					event.preventDefault(); 
+					$state.go('login');
+				}
+			});
+		}]);
