@@ -16,5 +16,9 @@ $(document).ready(function() {
     $(document).on("click", ".navbar-minimalize", function() {
         $("body").toggleClass("mini-navbar");
         SmoothlyMenu();
-    })
+    });
+    
+    $(document).on("click", "#dockerSetBtn", function() {
+        $("#DockerSetting").toggle(500);
+    });
 })
